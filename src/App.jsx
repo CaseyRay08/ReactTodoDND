@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 import './App.css'
 
 
+
 const item = {
   id: uuidv4(),
   name: "House"
@@ -47,7 +48,6 @@ const App = () => {
     }
     //creating a copy of the item we are "deleting from one list" so we can set it in another list
     const itemCopy = {
-      //here we are making a copy of the state
       ...state[src.droppableId].items[src.index]
     }
     //here we are updating "setting state" using prev which gives us a guaranteed snapshot of our previous state which is useful when your new state depends on the previous state. 
@@ -78,6 +78,8 @@ const App = () => {
     })
     setText('')
   }
+
+
 
   return (
     <div className='container'>
@@ -115,6 +117,7 @@ const App = () => {
                                       {...provided.dragHandleProps}
                                     >
                                       {el.name}
+
                                     </div>
                                   )
                                 }}
